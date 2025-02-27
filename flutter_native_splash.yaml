@@ -1,0 +1,9 @@
+flutter_native_splash:
+  color: "#ffffff" # لون الخلفية للأجهزة القديمة و iOS
+  image: assets/images/splash.png # صورة شاشة البداية
+
+  android_12:
+    color: "#ffffff" # لون الخلفية للأجهزة التي تعمل بنظام Android 12+
+    image: assets/images/splash_android12_logo.png # صورة شاشة البداية لأندرويد 12+
+
+

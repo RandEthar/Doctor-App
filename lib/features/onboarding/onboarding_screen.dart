@@ -1,4 +1,7 @@
+import 'package:doctor_app/core/helpers/extension.dart';
+import 'package:doctor_app/core/routing/routes.dart';
 import 'package:doctor_app/core/theming/styles.dart';
+import 'package:doctor_app/core/widget/app_text_button.dart';
 import 'package:doctor_app/features/onboarding/widget/doctor_image_and_text.dart';
 import 'package:doctor_app/features/onboarding/widget/doctor_logo_and_name.dart';
 import 'package:doctor_app/features/onboarding/widget/get_started_button.dart';
@@ -34,7 +37,13 @@ class OnboardingScreen extends StatelessWidget {
                   SizedBox(
                     height: 32.h,
                   ),
-                 const GetStartedButton()
+                  AppTextButton(
+                    onPressed: () {
+                      context.pushNamed(Routes.loginScreen);
+                    },
+                    textStyle: TextStyles.font16WiteSemiBoldWight,
+                    buttonText: "Get Started",verticalPadding: 6.h,
+                  )
                 ],
               ),
             )
