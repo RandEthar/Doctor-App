@@ -1,15 +1,15 @@
 import 'package:doctor_app/core/helpers/spacing.dart';
 import 'package:doctor_app/core/theming/styles.dart';
 import 'package:doctor_app/core/widget/app_text_button.dart';
+import 'package:doctor_app/features/login/ui/widgets/terms_and_conditions.dart';
 import 'package:doctor_app/features/sign_up/logic/cubit/sign_up_cubit.dart';
-import 'package:flutter/material.dart';
-
+import 'package:doctor_app/features/sign_up/ui/widgets/already_have_account_text.dart';
+import 'package:doctor_app/features/sign_up/ui/widgets/sign_up_bloc_listner.dart';
+import 'package:doctor_app/features/sign_up/ui/widgets/sign_up_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -31,7 +31,7 @@ class SignupScreen extends StatelessWidget {
                 verticalSpace(8),
                 Text(
                   'Sign up now and start exploring all that our app has to offer. We\'re excited to welcome you to our community!',
-                  style: TextStyles.,
+                  style: TextStyles.font14grayMediumWight,
                 ),
                 verticalSpace(36),
                 Column(
@@ -46,7 +46,7 @@ class SignupScreen extends StatelessWidget {
                       },
                     ),
                     verticalSpace(16),
-                    const TermsAndConditionsText(),
+                   const TermsAndConditions(),
                     verticalSpace(30),
                     const AlreadyHaveAccountText(),
                     const SignupBlocListener(),

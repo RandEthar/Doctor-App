@@ -33,7 +33,7 @@ class AppTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding ??12.w, vertical: verticalPadding?? 14.h),
-      height: buttonhight ??52.h,
+      height: buttonhight ??56.h,
       width: buttonwidth??double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular( borderRadius??16.r),
