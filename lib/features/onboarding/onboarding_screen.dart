@@ -39,7 +39,7 @@ class OnboardingScreen extends StatelessWidget {
                   ),
                   AppTextButton(
                     onPressed: () {
-                      context.pushNamed(Routes.loginScreen);
+                      context.pushNamed(Routes.homeScreen);
                     },
                     textStyle: TextStyles.font16WiteSemiBoldWight,
                     buttonText: "Get Started",verticalPadding: 6.h,
