@@ -21,7 +21,7 @@ class DoctorSpecialityListView extends StatelessWidget {
              CircleAvatar(
                backgroundColor: ColorsManeger.lightBlue,
                radius:28.r,
-               child: SvgPicture.asset("assets/svgs/notifications.svg",height: 24.h,width: 24.w,),
+               child: SvgPicture.asset("assets/svgs/general_speciality.svg",height: 24.h,width: 24.w,),
              ),verticalSpace(12),
              Text("General",style:  TextStyles.interRegular12mainBlue.copyWith(
                color: ColorsManeger.darkBlue

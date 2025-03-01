@@ -5,7 +5,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TextStyles{
-
+static TextStyle interMedium12gray=GoogleFonts.inter
+(
+  color: ColorsManeger.gray,
+  fontSize: 12.sp,
+  fontWeight:FontWeightHelper.medium
+);
 static TextStyle font24BlacW700Wight=TextStyle(
   color: Colors.black,
   fontSize: 24.sp,

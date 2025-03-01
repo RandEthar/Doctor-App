@@ -12,7 +12,7 @@ class _ApiService implements ApiService {
   _ApiService(
     this._dio, {
     this.baseUrl,
-
+   
   }) {
     baseUrl ??= 'https://vcare.integration25.com/api/';
   }
@@ -21,7 +21,7 @@ class _ApiService implements ApiService {
 
   String? baseUrl;
 
-  
+
 
   @override
   Future<LoginResponse> login(LoginRequestBody loginRequestBody) async {
@@ -51,7 +51,7 @@ class _ApiService implements ApiService {
     try {
       _value = LoginResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
- 
+  
       rethrow;
     }
     return _value;
