@@ -1,19 +1,14 @@
 import 'package:doctor_app/core/helpers/spacing.dart';
 import 'package:doctor_app/core/theming/styles.dart';
-import 'package:doctor_app/features/home/data/models/specialization_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class DoctorsListView extends StatelessWidget {
-  const DoctorsListView({super.key, this.doctorsList});
+class DoctorsListViewItem extends StatelessWidget {
+  const DoctorsListViewItem ({super.key});
 
-
-final List<Doctors?>? doctorsList;
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(itemBuilder: (context, index) {
-        return Container(
+    return Container(
           height: 126.h,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -22,7 +17,7 @@ final List<Doctors?>? doctorsList;
                 ClipRRect(
                     borderRadius: BorderRadius.circular(16),
                     child: Image.asset(
-                      "assets/images/doctor.webp",
+                    "assets/images/doctor.webp",
                       height: 110.h,
                       width: 110.w,
                       fit: BoxFit.cover,
@@ -49,7 +44,5 @@ final List<Doctors?>? doctorsList;
             ),
           ),
         );
-      }),
-    );
   }
 }
