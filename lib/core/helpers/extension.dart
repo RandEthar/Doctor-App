@@ -17,3 +17,9 @@ extension Navigtion on BuildContext {
         .pushNamedAndRemoveUntil(routeName, arguments: argument, predicate);
   }
 }
+   
+extension StringExtension on String?{
+  bool isNullOrEmpty()=>this==null||this=='';
+
+
+}

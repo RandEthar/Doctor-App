@@ -4,7 +4,6 @@ import 'package:doctor_app/core/theming/styles.dart';
 import 'package:doctor_app/core/widget/app_text_button.dart';
 import 'package:doctor_app/features/onboarding/widget/doctor_image_and_text.dart';
 import 'package:doctor_app/features/onboarding/widget/doctor_logo_and_name.dart';
-import 'package:doctor_app/features/onboarding/widget/get_started_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -39,7 +38,7 @@ class OnboardingScreen extends StatelessWidget {
                   ),
                   AppTextButton(
                     onPressed: () {
-                      context.pushNamed(Routes.homeScreen);
+                      context.pushNamed(Routes.loginScreen);
                     },
                     textStyle: TextStyles.font16WiteSemiBoldWight,
                     buttonText: "Get Started",verticalPadding: 6.h,
