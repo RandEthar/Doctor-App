@@ -15,7 +15,7 @@ class SignUpRepo {
       var response = await _apiService.signup(signupRequestBody);
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(ErrorHandler.handle(error));
+      return ApiResult.failure(ApiErrorHandler.handle(error));
     }
   }
 }

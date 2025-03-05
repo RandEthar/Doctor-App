@@ -1,7 +1,4 @@
-import 'package:doctor_app/core/helpers/extension.dart';
-import 'package:doctor_app/core/routing/routes.dart';
 import 'package:doctor_app/core/theming/colors.dart';
-import 'package:doctor_app/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -31,17 +28,19 @@ class GetStartedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: horizontalPadding ??12.w, vertical: verticalPadding?? 14.h),
-      height: buttonhight ??52.h,
-      width: buttonwidth??double.infinity,
+      padding: EdgeInsets.symmetric(
+          horizontal: horizontalPadding ?? 12.w,
+          vertical: verticalPadding ?? 14.h),
+      height: buttonhight ?? 52.h,
+      width: buttonwidth ?? double.infinity,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular( borderRadius??16.r),
-        color: backgroundColor?? ColorsManeger.mainBlue,
+        borderRadius: BorderRadius.circular(borderRadius ?? 16.r),
+        color: backgroundColor ?? ColorsManeger.mainBlue,
       ),
       child: TextButton(
           onPressed: onPressed,
           child: Text(
-           buttonText,
+            buttonText,
             style: textStyle,
           )),
     );

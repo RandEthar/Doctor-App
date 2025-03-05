@@ -1,9 +1,12 @@
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:doctor_app/core/helpers/spacing.dart';
+import 'package:doctor_app/core/theming/colors.dart';
 import 'package:doctor_app/core/theming/styles.dart';
 import 'package:doctor_app/features/home/data/models/specialization_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shimmer/shimmer.dart';
 
 class DoctorsListViewItem extends StatelessWidget {
   const DoctorsListViewItem({super.key, this.doctorModel});
@@ -16,17 +19,31 @@ class DoctorsListViewItem extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Row(
           children: [
-            // ClipRRect(
-            //   borderRadius: BorderRadius.circular(16),
-            //   child: CachedNetworkImage(
-            //     progressIndicatorBuilder: (context, url, downloadProgress) =>
-            //         CircularProgressIndicator(
-            //       value: downloadProgress.progress,
-            //     ),
-            //     imageUrl: "https://raw.githubusercontent.com/RandEthar/Doctor-App/refs/heads/main/assets/images/doctor.webp",
-            //     errorWidget: (context, url, error) => Icon(Icons.error),
-            //   ),
-            // ),
+         CachedNetworkImage(
+       imageUrl: "https://raw.githubusercontent.com/RandEthar/Doctor-App/refs/heads/main/assets/images/doctor.webp",
+       progressIndicatorBuilder: (context, url, downloadProgress) => 
+                Shimmer.fromColors(
+                baseColor: ColorsManeger. lighterGray,
+                highlightColor: Colors.white,
+                 child: Container(
+                    height: 110.h,width: 110.w,
+                  decoration: BoxDecoration(
+                         borderRadius: BorderRadius.circular(16),
+                    color:  ColorsManeger. lighterGray,
+                  ),
+                 ),
+               )
+     ,imageBuilder: (context, imageProvider) =>   Container(
+                  height: 110.h,width: 110.w,
+                decoration: BoxDecoration(
+                       borderRadius: BorderRadius.circular(16),
+                  image: DecorationImage(
+                  image: imageProvider,
+                  fit: BoxFit.cover,
+                ),
+                ),
+               ),
+    ),
             horezontalSpace(16),
             Expanded(
               child: Column(

@@ -1,4 +1,5 @@
 import 'package:doctor_app/core/helpers/extension.dart';
+import 'package:doctor_app/core/networking/api_error_model.dart';
 import 'package:doctor_app/core/routing/routes.dart';
 import 'package:doctor_app/core/theming/colors.dart';
 import 'package:doctor_app/core/theming/styles.dart';
@@ -15,10 +16,10 @@ class LoginBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
       listenWhen: (previous, current) =>
-          current is Loading || current is Success || current is Error,
+          current is LoginLoading || current is LoginSuccess || current is LoginError,
       listener: (context, state) {
         state.whenOrNull(
-          loading: () {
+         loginloading: () {
             showDialog(
               context: context,
               builder: (context) => const Center(
@@ -28,11 +29,11 @@ class LoginBlocListener extends StatelessWidget {
               ),
             );
           },
-          success: (loginResponse) {
+         loginsuccess: (loginResponse) {
             context.pop();
             context.pushNamed(Routes.homeScreen);
           },
-          error: (error) {
+         loginerror: (error) {
             setupErrorState(context, error);
           },
         );
@@ -41,7 +42,7 @@ class LoginBlocListener extends StatelessWidget {
     );
   }
 
-  void setupErrorState(BuildContext context, String error) {
+  void setupErrorState(BuildContext context,ApiErrorModel  apiErrorModel) {
     context.pop();
     showDialog(
         context: context,
@@ -52,7 +53,7 @@ class LoginBlocListener extends StatelessWidget {
                 size: 24,
               ),
               content: Text(
-                error,
+               apiErrorModel.getAllErrorMessage(),
                 style: TextStyles.font14grayRegularWight,
               ),
               actions: [
